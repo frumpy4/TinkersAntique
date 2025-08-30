@@ -78,6 +78,7 @@ public class TinkerDebug {
       ClientCommandHandler.instance.registerCommand(new GetToolGrowth());
       ClientCommandHandler.instance.registerCommand(new CompareVanilla());
       ClientCommandHandler.instance.registerCommand(new ListValidModifiers());
+      ClientCommandHandler.instance.registerCommand(new DumpMaterials2());
     }
 
     sanityCheck();
