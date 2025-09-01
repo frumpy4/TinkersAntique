@@ -123,7 +123,11 @@ public class DumpMaterials2 extends CommandBase {
 
     for (ITrait trait : traits) {
       i += 1;
-      String desc = net.minecraft.util.StringUtils.stripControlCodes(trait.getLocalizedDesc());
+      String desc = net.minecraft.util.StringUtils.stripControlCodes(trait.getLocalizedDesc())
+        .replace("\r", " ") // dont think carriage return appears anywhere but just in case
+        .replace("\\r", " ")
+        .replace("\n", " ")
+        .replace("\\n", " ");
       out.format("%s (%s): %s\n", trait.getLocalizedName(), trait.getIdentifier(), desc);
     }
 
